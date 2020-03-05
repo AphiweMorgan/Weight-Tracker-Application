@@ -16,7 +16,7 @@ PROJECT SETUP
 
 3. locate the file Name "Weight-Tracking Script.sql" and run that script  as a query.That would then setup your database and  tables for use.
 
-4.There are 3 classes that you should Open in your IDE, Login_S,SignUp and HomePage in which you need to locate the following connection string:
+4.There are 3 classes that you should Open in your IDE, Login_S,SignUp and HomePage in which you need to locate the following connection string in each class:
 myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/weighttrackingdb", "root", "Aphiwe@2174");
 
 The only modification that you will then need to make to ensure that the connection string is correctly referencing your localhost database
