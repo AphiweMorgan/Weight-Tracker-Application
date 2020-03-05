@@ -1,7 +1,6 @@
-package Login_Sys;
+package example.weight.tracker.ui;
 
 import java.awt.BasicStroke;
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -27,7 +26,6 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
@@ -43,7 +41,7 @@ import javax.swing.JButton;
 import java.awt.Color;
 import com.toedter.calendar.JDateChooser;
 
-public class HomePage extends JFrame {
+public class HomeView extends JFrame {
 
 	private JPanel contentPane;
 	
@@ -58,7 +56,7 @@ public class HomePage extends JFrame {
 	private JTextField txtClientID;
 	
 	static Statement myStat;
-	static HomePage frame;
+	static HomeView frame;
 
 	/**
 	 * Launch the application.
@@ -67,7 +65,7 @@ public class HomePage extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					frame = new HomePage();
+					frame = new HomeView();
 					frame.setLocationRelativeTo(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -103,7 +101,7 @@ public class HomePage extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public HomePage() {
+	public HomeView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
 		setBounds(420, 280, 729, 456);
@@ -119,7 +117,7 @@ public class HomePage extends JFrame {
 		lblWelcome.setBounds(90, 11, 359, 34);
 		contentPane.add(lblWelcome);
 		
-		JLabel lblNewLabel_1 = new JLabel(Login_S.UserName);
+		JLabel lblNewLabel_1 = new JLabel(LoginView.UserName);
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD | Font.ITALIC, 24));
 		lblNewLabel_1.setBounds(332, 11, 233, 28);
 		contentPane.add(lblNewLabel_1);
@@ -258,7 +256,7 @@ public class HomePage extends JFrame {
 		txtClientID.setBounds(332, 139, 127, 20);
 		contentPane.add(txtClientID);
 		txtClientID.setColumns(10);
-		txtClientID.setText(""+Login_S.CID);
+		txtClientID.setText(""+ LoginView.CID);
 		
 		JLabel lblNewLabel_6 = new JLabel("Kg");
 		lblNewLabel_6.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -273,7 +271,7 @@ public class HomePage extends JFrame {
 					
 					Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/weighttrackingdb", "root", "Aphiwe@2174");
 					
-					String query = " select Date,Weight from weight WHERE  idClient =" + Login_S.CID;
+					String query = " select Date,Weight from weight WHERE  idClient =" + LoginView.CID;
 					JDBCCategoryDataset dataset = new JDBCCategoryDataset(myConn,query);
 					dataset.executeQuery(query);
 					
@@ -284,7 +282,7 @@ public class HomePage extends JFrame {
 					LineAndShapeRenderer renderer = new LineAndShapeRenderer();
 					plot.setRenderer(renderer);
 					
-					//Setting custom paint color and stroke for the plot’s outlines (chart borders):
+					//Setting custom paint color and stroke for the plotï¿½s outlines (chart borders):
 					plot.setOutlinePaint(Color.BLUE);
 					plot.setOutlineStroke(new BasicStroke(2.0f));
 					

@@ -1,14 +1,15 @@
+package example.weight.tracker.ui;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 
-public class Frame1 {
+public class View1 {
 
 	private JFrame frame;
 	private JLabel lblMessage;
@@ -20,7 +21,7 @@ public class Frame1 {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Frame1 window = new Frame1();
+					View1 window = new View1();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -32,7 +33,7 @@ public class Frame1 {
 	/**
 	 * Create the application.
 	 */
-	public Frame1() {
+	public View1() {
 		initialize();
 	}
 

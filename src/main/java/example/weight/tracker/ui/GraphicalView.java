@@ -1,4 +1,4 @@
-package Login_Sys;
+package example.weight.tracker.ui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
