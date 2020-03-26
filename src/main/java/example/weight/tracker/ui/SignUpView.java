@@ -1,6 +1,5 @@
-package Login_Sys;
+package example.weight.tracker.ui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -26,7 +25,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.awt.event.ActionEvent;
 
-public class SignUp extends JFrame {
+public class SignUpView extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textName;
@@ -40,17 +39,18 @@ public class SignUp extends JFrame {
 	
 	private JFrame frmLoginSystem;
 	
-	static SignUp frameOne;
+	static SignUpView frameOne;
 	
 
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		// TODO - move all of this stuff to a data class, this View class only has view responsibilities
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-				    frameOne = new SignUp();
+				    frameOne = new SignUpView();
 				    frameOne.setLocationRelativeTo(null);
 					frameOne.setVisible(true);
 					
@@ -67,7 +67,8 @@ public class SignUp extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public SignUp() {
+	public SignUpView() {
+		// TODO - refactor method into calls to other private methods - method should only do one thing - either control the logic or do it
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(420, 280, 729, 456);
 		contentPane = new JPanel();
@@ -204,7 +205,7 @@ public class SignUp extends JFrame {
 					
 					
 				//	NEED TO TRY AND FIX THIS TO ALLOW ME TO GO BACK TO LOGIN SCREEN
-				  Login_S m = new Login_S();
+				  LoginView m = new LoginView();
 					frameOne.setVisible(false);
 					m.setVisible(true);
 					dispose();
@@ -232,8 +233,8 @@ public class SignUp extends JFrame {
 					
 					while (myRs.next()) {
 						if(myRs.isLast())
-						Login_S.CID = myRs.getInt("idClient");
-						Login_S.UserName =  myRs.getString("Name");
+						LoginView.CID = myRs.getInt("idClient");
+						LoginView.UserName =  myRs.getString("Name");
 					}
 								
 				} catch (SQLException e1) {
@@ -242,7 +243,7 @@ public class SignUp extends JFrame {
 				}
 				
 				//create object
-				HomePage Welcome = new HomePage();		
+				HomeView Welcome = new HomeView();
 				frameOne.setVisible(false);
 				Welcome.setVisible(true);
 				dispose();

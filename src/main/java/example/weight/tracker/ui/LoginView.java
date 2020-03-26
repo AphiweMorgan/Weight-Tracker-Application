@@ -1,4 +1,4 @@
-package Login_Sys;
+package example.weight.tracker.ui;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -31,7 +31,7 @@ import java.awt.Cursor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-public class Login_S extends JDialog {
+public class LoginView extends JDialog {
 
 	private static JFrame frame;
 	private JTextField txtUsername;
@@ -43,7 +43,7 @@ public class Login_S extends JDialog {
 	
 	static Statement myStat;
 	
-	static Login_S window;
+	static LoginView window;
 	
 	public static int CID;
 	public static String UserName;
@@ -56,7 +56,7 @@ public class Login_S extends JDialog {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					 window = new Login_S();
+					 window = new LoginView();
 
 					window.frame.setUndecorated(true);
 					frame.setLocationRelativeTo(null);
@@ -76,7 +76,7 @@ public class Login_S extends JDialog {
 	/**
 	 * Create the application.
 	 */
-	public Login_S() {
+	public LoginView() {
 		initialize();	}
 
 	/**
@@ -151,7 +151,7 @@ public class Login_S extends JDialog {
 						UserName = myRs.getString("Name");
 						
 						//create object for the home-screen
-						HomePage Welcome = new HomePage();
+						HomeView Welcome = new HomeView();
 						window.frame.setVisible(false);
 						Welcome.setVisible(true);
 						dispose();
@@ -186,7 +186,7 @@ public class Login_S extends JDialog {
 			public void actionPerformed(ActionEvent e) {
 		
 				//create SignUp object
-				SignUp Register = new SignUp();
+				SignUpView Register = new SignUpView();
 				window.frame.setVisible(false);
 				Register.setVisible(true);
 				dispose();
@@ -220,17 +220,17 @@ public class Login_S extends JDialog {
 		frame.getContentPane().add(separator_1);
 		
 		JLabel user = new JLabel("");
-		user.setIcon(new ImageIcon(Login_S.class.getResource("/Login_Sys/profile1.png")));
+		user.setIcon(new ImageIcon(getClass().getClassLoader().getResource("profile1.png")));
 		user.setBounds(154, 55, 57, 44);
 		frame.getContentPane().add(user);
 		
 		JLabel pass = new JLabel("");
-		pass.setIcon(new ImageIcon(Login_S.class.getResource("/Login_Sys/lock1.jpg")));
+		pass.setIcon(new ImageIcon(getClass().getClassLoader().getResource("lock1.jpg")));
 		pass.setBounds(154, 144, 67, 33);
 		frame.getContentPane().add(pass);
 		
 		JLabel lblClose = new JLabel("");
-		lblClose.setIcon(new ImageIcon(Login_S.class.getResource("/Login_Sys/Button-Close-icon.png")));
+		lblClose.setIcon(new ImageIcon(getClass().getClassLoader().getResource("Button-Close-icon.png")));
 		lblClose.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
