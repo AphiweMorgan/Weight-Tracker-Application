@@ -46,6 +46,7 @@ public class SignUpView extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
+		// TODO - move all of this stuff to a data class, this View class only has view responsibilities
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -67,6 +68,7 @@ public class SignUpView extends JFrame {
 	 * Create the frame.
 	 */
 	public SignUpView() {
+		// TODO - refactor method into calls to other private methods - method should only do one thing - either control the logic or do it
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(420, 280, 729, 456);
 		contentPane = new JPanel();
