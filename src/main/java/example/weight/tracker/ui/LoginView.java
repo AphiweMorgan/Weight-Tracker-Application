@@ -220,17 +220,17 @@ public class LoginView extends JDialog {
 		frame.getContentPane().add(separator_1);
 		
 		JLabel user = new JLabel("");
-		user.setIcon(new ImageIcon(LoginView.class.getResource("/Login_Sys/profile1.png")));
+		user.setIcon(new ImageIcon(getClass().getClassLoader().getResource("profile1.png")));
 		user.setBounds(154, 55, 57, 44);
 		frame.getContentPane().add(user);
 		
 		JLabel pass = new JLabel("");
-		pass.setIcon(new ImageIcon(LoginView.class.getResource("/Login_Sys/lock1.jpg")));
+		pass.setIcon(new ImageIcon(getClass().getClassLoader().getResource("lock1.jpg")));
 		pass.setBounds(154, 144, 67, 33);
 		frame.getContentPane().add(pass);
 		
 		JLabel lblClose = new JLabel("");
-		lblClose.setIcon(new ImageIcon(LoginView.class.getResource("/Login_Sys/Button-Close-icon.png")));
+		lblClose.setIcon(new ImageIcon(getClass().getClassLoader().getResource("Button-Close-icon.png")));
 		lblClose.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
